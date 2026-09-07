@@ -1,4 +1,4 @@
-# Product Listing Assessment
+# E-Commerce Store
 
 Product listing and shopping cart app (React + TypeScript + Vite + Tailwind).
 
