@@ -6,6 +6,7 @@ import {
   selectProducts,
   selectProductsStatus,
 } from '../features/products/productsSlice'
+import { addToCart, selectCartItems } from '../features/cart/cartSlice'
 import { LoadingState } from '../components/LoadingState'
 import { formatPrice } from '../utils/formatPrice'
 
@@ -14,6 +15,7 @@ export function ProductDetailPage() {
   const dispatch = useAppDispatch()
   const products = useAppSelector(selectProducts)
   const status = useAppSelector(selectProductsStatus)
+  const cartItems = useAppSelector(selectCartItems)
   const product = products.find((p) => p.id === Number(id))
 
   useEffect(() => {
@@ -33,6 +35,9 @@ export function ProductDetailPage() {
     )
   }
 
+  const qtyInCart = cartItems.find((i) => i.id === product.id)?.quantity ?? 0
+  const atMax = product.stock <= 0 || qtyInCart >= product.stock
+
   return (
     <section className="grid gap-2 rounded-lg border border-slate-200 bg-white p-5">
       <Link to="/">← Back to products</Link>
@@ -47,6 +52,15 @@ export function ProductDetailPage() {
       <p>Rating: {product.rating}</p>
       <p>Price: {formatPrice(product.price)}</p>
       <p>Available stock: {product.stock}</p>
+      <button
+        type="button"
+        disabled={atMax}
+        onClick={() => dispatch(addToCart(product))}
+        aria-label={`Add ${product.title} to cart`}
+        className="w-fit rounded border border-slate-300 bg-white px-3 py-1.5 disabled:cursor-not-allowed disabled:opacity-50"
+      >
+        {product.stock <= 0 ? 'Out of stock' : atMax ? 'Max in cart' : 'Add to Cart'}
+      </button>
     </section>
   )
 }

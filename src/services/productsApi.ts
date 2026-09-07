@@ -4,7 +4,7 @@ import {
   type DummyJsonProductsResponse,
 } from './productAdapter'
 
-export const PRODUCTS_API_URL = 'https://dummyjson.com/products?limit=50'
+export const PRODUCTS_API_URL = 'https://dummyjson.com/products?limit=100'
 export const SIMULATE_ERROR_KEY = 'simulate-products-error'
 
 let shouldFailNextFetch = false

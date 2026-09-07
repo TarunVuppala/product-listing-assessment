@@ -8,7 +8,7 @@ export function Header() {
   return (
     <header className="flex items-center justify-between gap-4 bg-slate-900 px-5 py-3 text-white">
       <Link to="/" className="text-lg font-bold text-white no-underline">
-        ShopLite
+        E-Commerce Store
       </Link>
       <nav className="flex gap-4" aria-label="Main">
         <NavLink
