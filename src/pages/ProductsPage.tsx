@@ -60,12 +60,17 @@ export function ProductsPage() {
 
   return (
     <section>
-      <h1 className="mb-4 text-2xl font-bold text-slate-900">Products</h1>
-      <div className="mb-4 grid gap-3 sm:grid-cols-3">
+      <div className="mb-4 flex flex-col gap-3 rounded bg-white p-3 shadow-sm sm:flex-row sm:items-center">
         <SearchBar value={search} onChange={setSearch} />
         <CategoryFilter value={category} onChange={setCategory} />
         <SortControl value={sort} onChange={setSort} />
       </div>
+
+      <div className="mb-3 flex items-baseline justify-between gap-2">
+        <h1 className="m-0 text-xl font-semibold text-slate-900">Products</h1>
+        <p className="m-0 text-sm text-slate-500">{visibleProducts.length} results</p>
+      </div>
+
       <ProductList
         products={visibleProducts}
         getAtMaxStock={getAtMaxStock}

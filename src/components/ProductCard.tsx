@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Star } from 'lucide-react'
 import type { Product } from '../types/product'
 import { formatPrice } from '../utils/formatPrice'
@@ -9,7 +10,7 @@ interface ProductCardProps {
   onAddToCart: (product: Product) => void
 }
 
-export function ProductCard({ product, atMaxStock, onAddToCart }: ProductCardProps) {
+export const ProductCard = React.memo(function ProductCard({ product, atMaxStock, onAddToCart }: ProductCardProps) {
   const disabled = product.stock <= 0 || atMaxStock
 
   return (
@@ -64,3 +65,4 @@ export function ProductCard({ product, atMaxStock, onAddToCart }: ProductCardPro
     </article>
   )
 }
+);
