@@ -6,9 +6,9 @@ import { CartPage } from './pages/CartPage'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-[#f1f3f6] text-slate-900">
       <Header />
-      <main className="mx-auto max-w-5xl p-5">
+      <main className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
         <Routes>
           <Route path="/" element={<ProductsPage />} />
           <Route path="/product/:id" element={<ProductDetailPage />} />

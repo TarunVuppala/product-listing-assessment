@@ -15,15 +15,15 @@ interface SortControlProps {
 
 export function SortControl({ value, onChange }: SortControlProps) {
   return (
-    <div className="flex flex-col gap-1">
-      <label htmlFor="sort-control" className="text-sm font-medium text-slate-700">
+    <div className="flex min-w-[160px] flex-col gap-1">
+      <label htmlFor="sort-control" className="sr-only">
         Sort
       </label>
       <select
         id="sort-control"
         value={value}
         onChange={(e) => onChange(e.target.value as SortOption)}
-        className="rounded border border-slate-300 bg-white px-3 py-2"
+        className="h-10 rounded border border-slate-300 bg-white px-3 text-sm outline-none ring-[#2874f0] focus:ring-2"
       >
         {OPTIONS.map((o) => (
           <option key={o.value} value={o.value}>

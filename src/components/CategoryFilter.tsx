@@ -15,15 +15,15 @@ interface CategoryFilterProps {
 
 export function CategoryFilter({ value, onChange }: CategoryFilterProps) {
   return (
-    <div className="flex flex-col gap-1">
-      <label htmlFor="category-filter" className="text-sm font-medium text-slate-700">
+    <div className="flex min-w-[140px] flex-col gap-1">
+      <label htmlFor="category-filter" className="sr-only">
         Category
       </label>
       <select
         id="category-filter"
         value={value}
         onChange={(e) => onChange(e.target.value as ProductCategory)}
-        className="rounded border border-slate-300 bg-white px-3 py-2"
+        className="h-10 rounded border border-slate-300 bg-white px-3 text-sm outline-none ring-[#2874f0] focus:ring-2"
       >
         {CATEGORIES.map((c) => (
           <option key={c} value={c}>

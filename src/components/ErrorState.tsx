@@ -1,3 +1,5 @@
+import { RefreshCw } from 'lucide-react'
+
 interface ErrorStateProps {
   message: string
   onRetry: () => void
@@ -5,13 +7,14 @@ interface ErrorStateProps {
 
 export function ErrorState({ message, onRetry }: ErrorStateProps) {
   return (
-    <div className="rounded-lg border border-red-200 bg-red-50 p-6" role="alert">
-      <p className="mb-3">{message}</p>
+    <div className="rounded bg-white p-6 shadow-sm" role="alert">
+      <p className="m-0 text-slate-800">{message}</p>
       <button
         type="button"
         onClick={onRetry}
-        className="rounded border border-slate-300 bg-white px-3 py-1.5 disabled:cursor-not-allowed disabled:opacity-50"
+        className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#ffd814] px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-[#f7ca00]"
       >
+        <RefreshCw className="h-4 w-4" aria-hidden="true" />
         Retry
       </button>
     </div>

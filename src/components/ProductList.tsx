@@ -14,7 +14,7 @@ export function ProductList({ products, getAtMaxStock, onAddToCart }: ProductLis
   }
 
   return (
-    <ul className="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-4 p-0">
+    <ul className="m-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {products.map((product) => (
         <li key={product.id}>
           <ProductCard
