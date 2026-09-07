@@ -6,7 +6,7 @@ Product listing and shopping cart app (React + TypeScript + Vite + Tailwind).
 
 ```bash
 npm install
-npm run dev
+npm start
 ```
 
 App runs at `http://localhost:5173`.

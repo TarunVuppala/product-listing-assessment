@@ -1,10 +1,20 @@
-function App() {
+import { Route, Routes } from 'react-router-dom'
+import { Header } from './components/Header'
+import { ProductsPage } from './pages/ProductsPage'
+import { ProductDetailPage } from './pages/ProductDetailPage'
+import { CartPage } from './pages/CartPage'
+
+export default function App() {
   return (
-    <main className="mx-auto max-w-5xl p-5">
-      <h1 className="text-2xl font-bold text-slate-900">Products Listing</h1>
-      <p className="mt-2 text-slate-600">Product listing app</p>
-    </main>
+    <div className="min-h-screen bg-slate-50">
+      <Header />
+      <main className="mx-auto max-w-5xl p-5">
+        <Routes>
+          <Route path="/" element={<ProductsPage />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
+      </main>
+    </div>
   )
 }
-
-export default App
