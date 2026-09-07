@@ -1,4 +1,4 @@
-# ShopLite
+# Product Listing Assessment
 
 Product listing and shopping cart app (React + TypeScript + Vite + Tailwind).
 
